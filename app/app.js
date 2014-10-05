@@ -3,6 +3,7 @@ require.config({
     baseUrl: "js",
     paths: {
         "d3": "d3",
+        "pixi": "pixi.dev",
         "jquery": "jquery-2.1.1"
     },
     shim: {
@@ -12,7 +13,7 @@ require.config({
     }
 });
 
-require(["d3","jquery"],
+require(["d3","jquery","pixi"],
 function(d3, $) {
 
     "use strict";
@@ -106,8 +107,8 @@ function(d3, $) {
         canvas.width = CANVAS_WIDTH;
         canvas.height = CANVAS_HEIGHT;
 
-        var body = document.body;
-        body.appendChild(canvas);
+        var gameDiv = $("#gameDiv");
+        gameDiv.append(canvas);
 
         return canvas;
     }
